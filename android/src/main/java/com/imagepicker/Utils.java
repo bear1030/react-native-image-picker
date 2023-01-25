@@ -447,6 +447,7 @@ public class Utils {
         for(int i = 0; i < fileUris.size(); ++i) {
             Uri uri = fileUris.get(i);
 
+            // Call getAppSpecificStorageUri in the if block to avoid copying unsupported files
             if (isImageType(uri, context)) {
                 if (uri.getScheme().contains("content")) {
                     uri = getAppSpecificStorageUri(uri, context);
